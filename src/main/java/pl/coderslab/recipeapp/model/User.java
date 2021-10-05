@@ -1,6 +1,7 @@
 package pl.coderslab.recipeapp.model;
 import lombok.Data;
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -15,4 +16,5 @@ public class User {
     private String email;
     private String password;
     private int enable;
+
 }

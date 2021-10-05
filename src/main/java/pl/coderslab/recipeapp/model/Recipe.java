@@ -1,9 +1,11 @@
 package pl.coderslab.recipeapp.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-
+@Data
 @Entity
 @Table(name= "recipes")
 public class Recipe {
@@ -16,4 +18,7 @@ public class Recipe {
     private LocalDateTime createdTime;
     private LocalDateTime updatedTime;
     private String preparationTime;
+    private String preparation;
+    @ManyToOne
+    private User user;
 }
