@@ -25,13 +25,15 @@
                     <div class="form-group">
                         Last name: <form:input id="lastName" type="text" name="lastName" path="lastName"/>
                     </div>
-                    <div class="form-group">
-                        <form:hidden id="username"  name="username" path="username" />
-                    </div>
+
                     <div class="form-group">
                         Email: <form:input id="email" type="text" name="email" path="email"/>
                     </div>
-                    <form:hidden id="password"  name="password" path="password"/>
+                       Username:  <form:hidden id="username"  name="username" path="username" />
+                    <div>
+                     Password: <form:password id="password"  name="password" path="password"/>
+                    </div>
+                    <br>
                     <button class="btn btn-color rounded-0" type="submit">Edit</button>
                 </form:form>
             </div>

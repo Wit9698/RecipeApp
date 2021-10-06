@@ -9,6 +9,7 @@ import pl.coderslab.recipeapp.repository.UserRepository;
 import pl.coderslab.recipeapp.service.UserService;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 
 @Service
@@ -36,4 +37,8 @@ public class UserServiceImpl implements UserService {
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
         userRepository.save(user);
     }
+
+
+
+
 }
