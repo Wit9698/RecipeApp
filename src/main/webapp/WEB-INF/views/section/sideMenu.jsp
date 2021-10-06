@@ -3,7 +3,7 @@
 <ul class="nav flex-column long-bg">
     <li class="nav-item">
         <a class="nav-link" href="/app/dashboard">
-            <span>Pulpit</span>
+            <span>Desktop</span>
             <i class="fas fa-angle-right"></i>
         </a>
     </li>

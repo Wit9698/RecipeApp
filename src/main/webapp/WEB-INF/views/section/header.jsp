@@ -3,23 +3,23 @@
 <header class="page-header">
     <nav class="navbar navbar-expand-lg justify-content-around">
         <a href="/" class="navbar-brand main-logo">
-            Zaplanuj <span>Jedzonko</span>
+            Plan your <span>Meal</span>
         </a>
         <ul class="nav nounderline text-uppercase">
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="/login">logowanie</a>
+                <a class="nav-link color-header" href="/login">Log in</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="/register">rejestracja</a>
+                <a class="nav-link color-header" href="/registration">Register</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link" href="/about">o aplikacji</a>
+                <a class="nav-link" href="/about">About app</a>
             </li>
             <li class="nav-item ml-4">
                 <a class="nav-link disabled" href="/recipes">Recipes</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link disabled" href="/contact">Kontakt</a>
+                <a class="nav-link disabled" href="/contact">Contact</a>
             </li>
         </ul>
     </nav>

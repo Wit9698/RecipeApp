@@ -16,16 +16,16 @@
         <div class="border-dashed view-height">
             <div class="container w-25">
                 <form:form method="post" action="/login">
-                    <h1 class="text-color-darker">Logowanie</h1>
+                    <h1 class="text-color-darker">Enter your login and password:</h1>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="podaj nazwe " required="required">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username " required="required">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="podaj hasło" required="required">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required">
                     </div>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <button class="btn btn-color rounded-0" type="submit">Zaloguj</button>
-                </form:form>
+                    <button class="btn btn-color rounded-0" type="submit">Log in</button>
+                </form:form><small>You don't have account? </small><a href="registration" class="signin"> register</a>
             </div>
         </div>
     </div>

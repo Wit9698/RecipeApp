@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import pl.coderslab.recipeapp.service.SpringDataUserDetailsService;
 
@@ -25,8 +24,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/home").hasRole("USER")
-                .and().formLogin();
+                .antMatchers("/user/**").hasRole("USER")
+                .and().formLogin()
+                .loginPage("/login")
+                .usernameParameter("username")
+                .defaultSuccessUrl("/user/dashboard")
+                .permitAll();
 
     }
     @Bean

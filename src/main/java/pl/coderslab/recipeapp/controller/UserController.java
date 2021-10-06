@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.recipeapp.model.User;
 import pl.coderslab.recipeapp.service.UserService;
 
@@ -33,6 +34,16 @@ public class UserController {
     public String viewLoginPage() {
         return "home/login";
     }
+
+
+
+    @RequestMapping("/user/dashboard")
+    public String showDashboard(){
+        return "user/userDashboard";
+    }
+
+
+
 }
 // if (result.hasErrors()) {
 //         return "registration";

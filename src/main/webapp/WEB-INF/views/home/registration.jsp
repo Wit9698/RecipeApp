@@ -35,7 +35,7 @@
                     </div>
                     <button class="btn btn-color rounded-0" type="submit">Zarejestruj</button>
 
-                </form:form><small>Already have an account? </small><a href="login" class="signup">Login</a>
+                </form:form><small>Already have an account? </small><a href="login" class="signup">Log in</a>
             </div>
         </div>
     </div>
