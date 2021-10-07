@@ -11,7 +11,7 @@
 <section>
     <div class="row padding-small">
         <i class="fas fa-users icon-users"></i>
-        <h1>Przepisy naszych użytkowników:</h1>
+        <h1>Recipes added by our users</h1>
         <hr>
         <div class="orange-line w-100"></div>
     </div>
@@ -30,14 +30,14 @@
         <thead>
         <tr class="d-flex text-color-darker">
             <th scope="col" class="col-1">ID</th>
-            <th scope="col" class="col-5">NAZWA</th>
-            <th scope="col" class="col-5">OPIS</th>
-            <th scope="col" class="col-1">AKCJE</th>
+            <th scope="col" class="col-5">NAME</th>
+            <th scope="col" class="col-5">DESCRIPTION</th>
+            <th scope="col" class="col-1">ACTIONS</th>
         </tr>
         </thead>
 
         <tbody class="text-color-lighter">
-        <c:forEach items="${recipes}" var="recipe">
+        <c:forEach items="${recipe}" var="recipe">
             <tr class="d-flex">
 
                 <th scope="row" class="col-1">${recipe.id}</th>
@@ -46,7 +46,7 @@
                 </td>
                 <td class="col-5">${recipe.description}</td>
                 <td class="col-1"><a href="/recipe/details?id=${recipe.id}"
-                                     class="btn btn-info rounded-0 text-light">Szczegóły</a></td>
+                                     class="btn btn-info rounded-0 text-light">Details</a></td>
             </tr>
         </c:forEach>
         </tbody>

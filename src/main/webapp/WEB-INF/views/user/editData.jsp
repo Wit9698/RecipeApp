@@ -29,7 +29,7 @@
                     <div class="form-group">
                         Email: <form:input id="email" type="text" name="email" path="email"/>
                     </div>
-                       Username:  <form:hidden id="username"  name="username" path="username" />
+                      <form:hidden id="username"  name="username" path="username" />
                     <div>
                      Password: <form:password id="password"  name="password" path="password"/>
                     </div>
