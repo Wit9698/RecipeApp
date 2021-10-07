@@ -9,7 +9,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/user/recipe/list">
-            <span>Przepisy</span>
+            <span>Recipes</span>
             <i class="fas fa-angle-right"></i>
         </a>
     </li>

@@ -6,10 +6,9 @@
 <html lang="en">
 
 <%@include file="../section/head.jsp" %>
-
 <body>
-
 <%@include file="../section/inAppHeader.jsp" %>
+
 <section class="dashboard-section">
     <div class="container pt-4 pb-4">
         <div class="border-dashed view-height">

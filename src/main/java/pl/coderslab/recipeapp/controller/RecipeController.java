@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.recipeapp.model.Recipe;
 import pl.coderslab.recipeapp.model.User;
 import pl.coderslab.recipeapp.repository.RecipeRepository;
@@ -58,6 +57,11 @@ public class RecipeController {
         User user = userService.findByUserName(customUser.getUsername());
         recipe.setUser(user);
         recipeRepository.save(recipe);
+        return "redirect:/user/recipe/list";
+    }
+    @GetMapping("/user/recipe/delete/{id}")
+    public String deleteRecipe(Model model, @PathVariable Long id){
+        recipeRepository.delete(recipeRepository.findRecipeById(id));
         return "redirect:/user/recipe/list";
     }
 }
