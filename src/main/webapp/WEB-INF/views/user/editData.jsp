@@ -10,6 +10,8 @@
 <%@include file="../section/inAppHeader.jsp" %>
 
 <section class="dashboard-section">
+    <div class="row dashboard-nowrap">
+        <%@include file="../section/sideMenu.jsp" %>
     <div class="container pt-4 pb-4">
         <div class="border-dashed view-height">
             <div class="container w-25">

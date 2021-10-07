@@ -64,4 +64,19 @@ public class RecipeController {
         recipeRepository.delete(recipeRepository.findRecipeById(id));
         return "redirect:/user/recipe/list";
     }
+    @GetMapping("user/recipe/edit/{id}")
+    public String editRecipe(@PathVariable long id, Model model,@AuthenticationPrincipal UserDetails customUser){
+        model.addAttribute("recipe",recipeRepository.findRecipeById(id));
+        User user = userService.findByUserName(customUser.getUsername());
+        model.addAttribute("user", user);
+        return "recipe/edit";
+    }
+    @PostMapping("user/recipe/edit/{id}")
+    public String editRecipe(Recipe recipe,@AuthenticationPrincipal UserDetails customUser){
+        User user = userService.findByUserName(customUser.getUsername());
+        recipe.setUser(user);
+        recipe.setUpdatedTime(LocalDateTime.now());
+        recipeRepository.save(recipe);
+        return "redirect:/user/recipe/list";
+    }
 }
