@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.recipeapp.model.Recipe;
@@ -31,7 +32,11 @@ public class RecipeController {
         model.addAttribute("recipe", recipeRepository.findAll());
     return "recipe/recipeList";
     }
-
+    @GetMapping("/recipes/details/{id}")
+    public String showRecipeList(Model model, @PathVariable Long id) {
+        model.addAttribute("recipe", recipeRepository.findRecipeById(id));
+        return "recipe/details";
+    }
     @GetMapping("/user/recipe/list")
     public String showRecipeListAfterLogin(@AuthenticationPrincipal UserDetails customUser, Model model){
         User user = userService.findByUserName(customUser.getUsername());

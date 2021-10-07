@@ -45,7 +45,7 @@
                         ${recipe.name}
                 </td>
                 <td class="col-5">${recipe.description}</td>
-                <td class="col-1"><a href="/recipe/details?id=${recipe.id}"
+                <td class="col-1"><a href="/recipes/details/${recipe.id}"
                                      class="btn btn-info rounded-0 text-light">Details</a></td>
             </tr>
         </c:forEach>
