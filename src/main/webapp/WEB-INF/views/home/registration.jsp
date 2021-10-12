@@ -20,18 +20,23 @@
                     <h1 class="text-color-darker">Register</h1>
                     <div class="form-group">
                         <form:input id="firstName" type="text" name="firstName" path="firstName" placeholder="Name"   data-msg="Please enter your name" class="input-material"/>
+                        <form:errors path="firstName"/>
                     </div>
                     <div class="form-group">
                         <form:input id="lastName" type="text" name="lastName" path="lastName" placeholder="Surname" data-msg="Please enter your surname"/>
+                        <form:errors path="lastName"/>
                     </div>
                     <div class="form-group">
-                        <form:input id="username" type="text" name="username" path="username"  placeholder="Username"  data-msg="Please enter username" />
+                        <form:input  id="username" type="text" name="username" path="username"  placeholder="Username"  data-msg="Please enter username" />
+                        <form:errors path="username"/>
                     </div>
                     <div class="form-group">
                         <form:input id="email" type="text" name="email" path="email"  placeholder="Email"  data-msg="Please enter a valid email address" />
+                        <form:errors path="email"/>
                     </div>
                     <div class="form-group">
                         <form:input id="password" type="password" name="password" path="password"  placeholder="Password"  data-msg="Please enter your password"/>
+                        <form:errors path="password"/>
                     </div>
                     <button class="btn btn-color rounded-0" type="submit">Zarejestruj</button>
 
