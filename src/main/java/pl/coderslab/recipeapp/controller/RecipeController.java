@@ -89,4 +89,9 @@ public class RecipeController {
             return "redirect:/user/recipe/list";
         }
     }
+    @GetMapping("user/recipe/details/{id}")
+    public String showRecipeDetails(@PathVariable Long id, Model model){
+        model.addAttribute("recipe", recipeRepository.findRecipeById(id));
+        return "recipe/appDetails";
+    }
 }
