@@ -17,7 +17,7 @@
                     <div class="menu-item border-dashed">
                         <a href="/user/recipe/add">
                             <i class="far fa-plus-square icon-plus-square"></i>
-                            <span class="title">dodaj przepis</span>
+                            <span class="title">add recipe</span>
                         </a>
                     </div>
                     <div class="menu-item border-dashed">
@@ -37,11 +37,11 @@
                 <div class="dashboard-alerts">
                     <div class="alert-item alert-info">
                         <i class="fas icon-circle fa-info-circle"></i>
-                        <span class="font-weight-bold">Liczba przepisów:</span>
+                        <span class="font-weight-bold">Number of recipes: ${count}</span>
                     </div>
                     <div class="alert-item alert-light">
                         <i class="far icon-calendar fa-calendar-alt"></i>
-                        <span class="font-weight-bold">Liczba planów:</span>
+                        <span class="font-weight-bold">Number of plans:</span>
                     </div>
                 </div>
             </div>

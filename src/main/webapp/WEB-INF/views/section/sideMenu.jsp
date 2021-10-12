@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <ul class="nav flex-column long-bg">
     <li class="nav-item">
-        <a class="nav-link" href="/app/dashboard">
+        <a class="nav-link" href="/user/dashboard">
             <span>Desktop</span>
             <i class="fas fa-angle-right"></i>
         </a>
