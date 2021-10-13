@@ -1,6 +1,8 @@
 package pl.coderslab.recipeapp.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -16,7 +18,7 @@ public class Plan {
     private Long id;
     @NotEmpty(message = "Please enter plan name")
     private String name;
-    @NotEmpty(message = "Please short descritpion")
+    @NotEmpty(message = "Please enter short description")
     private String description;
     private LocalDateTime createdTime;
     @ManyToOne

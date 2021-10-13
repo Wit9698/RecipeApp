@@ -15,7 +15,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/user/plan/list">
-            <span>Plany</span>
+            <span>Plans</span>
             <i class="fas fa-angle-right"></i>
         </a>
     </li>
