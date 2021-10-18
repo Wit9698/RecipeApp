@@ -16,7 +16,7 @@
         <div class="border-dashed view-height">
             <div class="container w-25">
                 <form:form method="post" action="/login">
-                    <h1 class="text-color-darker">Enter your login and password:</h1>
+                    <h1 class="text-color-darker">Enter your username and password:</h1>
                     <div class="form-group">
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username " required="required">
                     </div>

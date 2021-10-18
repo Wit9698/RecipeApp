@@ -23,7 +23,6 @@
                             <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Save</button>
                         </div>
                     </div>
-
                     <table class="table borderless">
                         <tbody>
                         <tr class="d-flex">
@@ -39,8 +38,16 @@
                                 <form:errors path="description"/>
                             </td>
                         </tr>
+                        </tr>
+                        <tr class="d-flex">
+                            <th scope="row" class="col-2">Recipes</th>
+                            <td class="col-7"> <form:select  path="recipes" items="${recipes}" itemLabel="name"  itemValue="id" multiple="true"/>
+                                <form:errors path="recipes"/>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
+
                         </form:form>
                     </div>
 

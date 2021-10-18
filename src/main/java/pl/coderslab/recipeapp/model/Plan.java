@@ -20,6 +20,8 @@ public class Plan {
     private String name;
     @NotEmpty(message = "Please enter short description")
     private String description;
+    private String  mealName;
+    private String day;
     private LocalDateTime createdTime;
     @ManyToOne
     private User user;

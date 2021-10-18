@@ -54,8 +54,10 @@ public class RecipeController {
     }
 
     @PostMapping("/user/recipe/add")
-    public String addRecipe(@Valid Recipe recipe, BindingResult bindingResult, @AuthenticationPrincipal UserDetails customUser){
+    public String addRecipe(Model model,@Valid Recipe recipe, BindingResult bindingResult, @AuthenticationPrincipal UserDetails customUser){
         if(bindingResult.hasErrors()){
+            User user = userService.findByUserName(customUser.getUsername());
+            model.addAttribute("user", user);
             return "recipe/addForm";
         }else {
             recipe.setCreatedTime(LocalDateTime.now());
@@ -78,8 +80,11 @@ public class RecipeController {
         return "recipe/edit";
     }
     @PostMapping("user/recipe/edit/{id}")
-    public String editRecipe(@Valid Recipe recipe,BindingResult bindingResult,@AuthenticationPrincipal UserDetails customUser){
+    public String editRecipe(@PathVariable long id, Model model,@Valid Recipe recipe,BindingResult bindingResult,@AuthenticationPrincipal UserDetails customUser){
         if(bindingResult.hasErrors()){
+            model.addAttribute("recipe",recipeRepository.findRecipeById(id));
+            User user = userService.findByUserName(customUser.getUsername());
+            model.addAttribute("user", user);
             return "recipe/edit";
         } else {
             User user = userService.findByUserName(customUser.getUsername());

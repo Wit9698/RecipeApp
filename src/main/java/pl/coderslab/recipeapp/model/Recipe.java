@@ -1,6 +1,7 @@
 package pl.coderslab.recipeapp.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 @Data
+@ToString
 @Entity
 @Table(name= "recipes")
 public class Recipe {

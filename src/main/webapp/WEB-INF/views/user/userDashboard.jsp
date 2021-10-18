@@ -23,15 +23,10 @@
                     <div class="menu-item border-dashed">
                         <a href="/app/plan/add">
                             <i class="far fa-plus-square icon-plus-square"></i>
-                            <span class="title">dodaj plan</span>
+                            <span class="title">add plan</span>
                         </a>
                     </div>
-                    <div class="menu-item border-dashed">
-                        <a href="/app/recipe/plan/add">
-                            <i class="far fa-plus-square icon-plus-square"></i>
-                            <span class="title">dodaj przepis do planu</span>
-                        </a>
-                    </div>
+
                 </div>
 
                 <div class="dashboard-alerts">
@@ -47,7 +42,7 @@
             </div>
             <div class="m-4 p-4 border-dashed">
                 <h2 class="dashboard-content-title">
-                    <span>Ostatnio dodany plan:</span>
+                    <span>Recently added plan:</span>
                 </h2>
 
 
