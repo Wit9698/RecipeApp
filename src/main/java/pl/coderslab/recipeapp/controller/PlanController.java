@@ -62,15 +62,9 @@ public class PlanController {
             return "redirect:/user/plan/list";
         }
     }
-
-
-    @ModelAttribute("mealName")
-    public List<String> mealNames() {
-        return Arrays.asList("breakfast","second breakfast", "lunch", "dinner","snack");
+    @GetMapping("/plan/delete/{id}")
+    public String deletePlan(Model model, @PathVariable Long id){
+        planRepository.delete(planRepository.findPlanById(id));
+        return "redirect:/user/plan/list";
     }
-    @ModelAttribute("day")
-    public List<String> days(){
-        return Arrays.asList("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
-    }
-
 }
