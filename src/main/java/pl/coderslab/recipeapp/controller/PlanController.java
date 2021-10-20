@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.recipeapp.model.Plan;
+import pl.coderslab.recipeapp.model.Recipe;
 import pl.coderslab.recipeapp.model.User;
 import pl.coderslab.recipeapp.repository.PlanRepository;
 import pl.coderslab.recipeapp.repository.RecipeRepository;
@@ -14,7 +15,6 @@ import pl.coderslab.recipeapp.service.UserService;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -73,4 +73,27 @@ public class PlanController {
         model.addAttribute("plan", planRepository.findPlanById(id));
         return "plan/details";
     }
+    @GetMapping("/plan/edit/{id}")
+    public String editPlan(@PathVariable long id, Model model,@AuthenticationPrincipal UserDetails customUser){
+        User user = userService.findByUserName(customUser.getUsername());
+        model.addAttribute("user", user);
+        model.addAttribute("plan",planRepository.findPlanById(id));
+        model.addAttribute("recipes", recipeRepository.findRecipeByUserId(user.getId()));
+        return "plan/edit";
+    }
+    @PostMapping("/plan/edit/{id}")
+    public String editPlan(@PathVariable long id, Model model, @Valid Plan plan, BindingResult bindingResult, @AuthenticationPrincipal UserDetails customUser){
+        if(bindingResult.hasErrors()){
+            model.addAttribute("plan",planRepository.findPlanById(id));
+            User user = userService.findByUserName(customUser.getUsername());
+            model.addAttribute("user", user);
+            return "plan/edit";
+        } else {
+            User user = userService.findByUserName(customUser.getUsername());
+            plan.setUser(user);
+            planRepository.save(plan);
+            return "redirect:/user/plan/list";
+        }
+    }
+
 }
