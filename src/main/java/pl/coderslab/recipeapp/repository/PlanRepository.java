@@ -9,4 +9,5 @@ import java.util.List;
 public interface PlanRepository extends JpaRepository<Plan, Long> {
     List<Plan> findPlanByUserId(long id);
     Plan findPlanById(long id);
+    Plan findPlanWithRecipesById(long id);
 }

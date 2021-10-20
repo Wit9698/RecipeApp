@@ -43,24 +43,14 @@
 
                 </div>
                 <table class="table">
-                    <c:forEach var="days" items="${days}">
+                    Recipes:
                         <thead>
+                        <c:forEach items="${plan.recipes}" var="recipe">
                         <tr class="d-flex">
-                            <th class="col-2"><c:out value="${days}"/></th>
-                            <th class="col-7"></th>
-                            <th class="col-1"></th>
-                            <th class="col-2"></th>
+                            <td>${recipe.name}</td>
+                            </c:forEach>
                         </tr>
                         </thead>
-                        <tbody class="text-color-lighter">
-
-                                    <tr class="d-flex">
-                                        <td class="col-2">${plan.recipes}
-                                        <td class="col-7">
-                                        <td class="col-1 center">     </tr>
-
-                        </tbody>
-                    </c:forEach>
                 </table>
             </div>
         </div>

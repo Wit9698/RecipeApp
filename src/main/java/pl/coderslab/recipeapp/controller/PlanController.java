@@ -14,7 +14,6 @@ import pl.coderslab.recipeapp.service.UserService;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -66,5 +65,12 @@ public class PlanController {
     public String deletePlan(Model model, @PathVariable Long id){
         planRepository.delete(planRepository.findPlanById(id));
         return "redirect:/user/plan/list";
+    }
+    @GetMapping("/plan/details/{id}")
+    public String showDetails(@PathVariable Long id, Model model,@AuthenticationPrincipal UserDetails customUser){
+        User user = userService.findByUserName(customUser.getUsername());
+        model.addAttribute("user", user);
+        model.addAttribute("plan", planRepository.findPlanById(id));
+        return "plan/details";
     }
 }

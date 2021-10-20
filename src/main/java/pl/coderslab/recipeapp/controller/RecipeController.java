@@ -95,8 +95,10 @@ public class RecipeController {
         }
     }
     @GetMapping("user/recipe/details/{id}")
-    public String showRecipeDetails(@PathVariable Long id, Model model){
+    public String showRecipeDetails(@PathVariable Long id, Model model, @AuthenticationPrincipal UserDetails customUser){
         model.addAttribute("recipe", recipeRepository.findRecipeById(id));
+        User user = userService.findByUserName(customUser.getUsername());
+        model.addAttribute("user", user);
         return "recipe/appDetails";
     }
 }

@@ -6,7 +6,7 @@
 <%@include file="../section/head.jsp" %>
 
 <body class="recipes-section">
-<%@include file="../section/header.jsp" %>
+<%@include file="../section/inAppHeader.jsp" %>
 <section class="mr-4 ml-4">
     <div class="row pt-4 pb-2">
         <i class="fas fa-users icon-users"></i>
