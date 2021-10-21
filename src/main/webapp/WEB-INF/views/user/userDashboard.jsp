@@ -42,15 +42,14 @@
             </div>
             <div class="m-4 p-4 border-dashed">
                 <h2 class="dashboard-content-title">
-                    <span>Recently added plan:</span>
+                    <span>Recently added plan: ${recentPlan.name}</span>
                 </h2>
-
 
                     <table class="table">
                         <thead>
                         <tr class="d-flex">
                             <th class="col-2"></th>
-                            <th class="col-8"></th>
+                            <th class="col-8">${recentPlan.description}</th>
                             <th class="col-2"></th>
                         </tr>
                         </thead>
