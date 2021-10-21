@@ -43,11 +43,14 @@
 
                 </div>
                 <table class="table">
+                    <span class="col-sm-2 label-size col-form-label">
                     Recipes:
+                         </span>
                         <thead>
                         <c:forEach items="${plan.recipes}" var="recipe">
                         <tr class="d-flex">
-                            <td>${recipe.name}</td>
+                            <td class="col-2">* ${recipe.name}</td>
+                            <td class="col-2 center"> <a href="<c:url value="/user/recipe/details/${recipe.id}"/>" class="btn btn-info rounded-0 text-light m-1">Details</a></td>
                             </c:forEach>
                         </tr>
                         </thead>
