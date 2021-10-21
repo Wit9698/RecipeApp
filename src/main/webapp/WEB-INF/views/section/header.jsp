@@ -16,7 +16,7 @@
                 <a class="nav-link disabled" href="/recipes">Recipes</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link disabled" href="/contact">Contact</a>
+                <a class="nav-link disabled" href="javascript:window.scrollTo(0,document.body.scrollHeight);">Contact</a>
             </li>
         </ul>
     </nav>
