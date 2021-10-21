@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.recipeapp.model.User;
+import pl.coderslab.recipeapp.repository.PlanRepository;
 import pl.coderslab.recipeapp.repository.RecipeRepository;
 import pl.coderslab.recipeapp.service.UserService;
 
@@ -23,12 +24,14 @@ public class UserController {
 
     private final UserService userService;
     private final BCryptPasswordEncoder passwordEncoder;
-    private RecipeRepository recipeRepository;
+    private final RecipeRepository recipeRepository;
+    private final PlanRepository planRepository;
 
-    public UserController(UserService userService, BCryptPasswordEncoder passwordEncoder,RecipeRepository recipeRepository) {
+    public UserController(UserService userService, BCryptPasswordEncoder passwordEncoder, RecipeRepository recipeRepository, PlanRepository planRepository) {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.recipeRepository = recipeRepository;
+        this.planRepository = planRepository;
     }
 
 
@@ -38,6 +41,7 @@ public class UserController {
         User user = userService.findByUserName(customUser.getUsername());
         model.addAttribute("user", user);
         model.addAttribute("count", recipeRepository.countByUserId(user.getId()));
+        model.addAttribute("countPlan", planRepository.countByUserId(user.getId()));
         return "user/userDashboard";
     }
     @GetMapping("/edit")

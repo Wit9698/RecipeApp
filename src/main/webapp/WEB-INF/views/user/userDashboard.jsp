@@ -21,7 +21,7 @@
                         </a>
                     </div>
                     <div class="menu-item border-dashed">
-                        <a href="/app/plan/add">
+                        <a href="/user/plan/add">
                             <i class="far fa-plus-square icon-plus-square"></i>
                             <span class="title">add plan</span>
                         </a>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="alert-item alert-light">
                         <i class="far icon-calendar fa-calendar-alt"></i>
-                        <span class="font-weight-bold">Number of plans:</span>
+                        <span class="font-weight-bold">Number of plans:  ${countPlan}</span>
                     </div>
                 </div>
             </div>
