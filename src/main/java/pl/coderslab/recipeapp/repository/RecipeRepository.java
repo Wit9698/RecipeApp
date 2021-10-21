@@ -9,4 +9,5 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
     List<Recipe> findRecipeByUserId(long id);
     Recipe findRecipeById(Long id);
     Long countByUserId(long id);
+    Recipe findByName(String name);
 }

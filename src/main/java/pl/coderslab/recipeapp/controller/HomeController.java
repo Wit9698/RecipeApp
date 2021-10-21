@@ -7,7 +7,9 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.coderslab.recipeapp.model.User;
+import pl.coderslab.recipeapp.repository.RecipeRepository;
 import pl.coderslab.recipeapp.service.UserService;
 
 import javax.validation.Valid;
@@ -16,9 +18,11 @@ import javax.validation.Valid;
 public class HomeController {
 
     private final UserService userService;
+    private final RecipeRepository recipeRepository;
 
-    public HomeController(UserService userService) {
+    public HomeController(UserService userService, RecipeRepository recipeRepository) {
         this.userService = userService;
+        this.recipeRepository = recipeRepository;
     }
 
     @GetMapping("/registration")

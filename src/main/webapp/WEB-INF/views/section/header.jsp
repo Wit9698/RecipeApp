@@ -13,9 +13,6 @@
                 <a class="nav-link color-header" href="/registration">Register</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link" href="/about">About app</a>
-            </li>
-            <li class="nav-item ml-4">
                 <a class="nav-link disabled" href="/recipes">Recipes</a>
             </li>
             <li class="nav-item ml-4">

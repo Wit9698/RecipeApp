@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +21,9 @@
 <section class="mr-4 ml-4">
     <div style="color: red"><c:if test="${notFound != null}">${notFound}</c:if></div>
     <p/>
+
+        <a href="/recipes" class="btn btn-color">All recipes</a>
+        <p/>
     <table class="table">
         <thead>
         <tr class="d-flex text-color-darker">
@@ -31,7 +35,6 @@
         </thead>
 
         <tbody class="text-color-lighter">
-        <c:forEach items="${recipe}" var="recipe">
             <tr class="d-flex">
 
                 <th scope="row" class="col-1">${recipe.id}</th>
@@ -42,7 +45,6 @@
                 <td class="col-1"><a href="/recipes/details/${recipe.id}"
                                      class="btn btn-info rounded-0 text-light">Details</a></td>
             </tr>
-        </c:forEach>
         </tbody>
 
     </table>

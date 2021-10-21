@@ -8,23 +8,29 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import pl.coderslab.recipeapp.model.Plan;
 import pl.coderslab.recipeapp.model.Recipe;
 import pl.coderslab.recipeapp.model.User;
+import pl.coderslab.recipeapp.repository.PlanRepository;
 import pl.coderslab.recipeapp.repository.RecipeRepository;
 import pl.coderslab.recipeapp.service.UserService;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Controller
 public class RecipeController {
 
-    private RecipeRepository recipeRepository;
-    private  UserService userService;
+    private final RecipeRepository recipeRepository;
+    private  final UserService userService;
+    private final PlanRepository planRepository;
 
-    public RecipeController(RecipeRepository recipeRepository, UserService userService) {
+    public RecipeController(RecipeRepository recipeRepository, UserService userService, PlanRepository planRepository) {
         this.recipeRepository = recipeRepository;
         this.userService = userService;
+        this.planRepository = planRepository;
     }
 
 
@@ -69,9 +75,19 @@ public class RecipeController {
     }
     @GetMapping("/user/recipe/delete/{id}")
     public String deleteRecipe(Model model, @PathVariable Long id){
-        recipeRepository.delete(recipeRepository.findRecipeById(id));
+        List<Plan> plansWithThisRecipe = planRepository.findPlanByRecipes(recipeRepository.findRecipeById(id));
+        if(plansWithThisRecipe.isEmpty()){
+            recipeRepository.delete(recipeRepository.findRecipeById(id));
+        }else{
+            return "redirect:/user/recipe/deleteinfo";
+        }
         return "redirect:/user/recipe/list";
     }
+    @RequestMapping("/user/recipe/deleteinfo")
+    public String deleteInformation(Model model) {
+        return "recipe/deleteinfo";
+    }
+
     @GetMapping("user/recipe/edit/{id}")
     public String editRecipe(@PathVariable long id, Model model,@AuthenticationPrincipal UserDetails customUser){
         model.addAttribute("recipe",recipeRepository.findRecipeById(id));
