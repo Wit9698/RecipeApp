@@ -25,5 +25,12 @@
             <i class="fas fa-angle-right"></i>
         </a>
     </li>
-
+    <li >
+        <a class="nav-link">
+        <form action="<c:url value="/logout"/>" method="post">
+            <input class="btn-color" type="submit" value="Logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+        </a>
+    </li>
 </ul>

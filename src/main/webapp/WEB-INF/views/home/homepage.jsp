@@ -28,15 +28,6 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="container w-75 d-flex">
-                    <div class="carousel-caption d-block">
-                        <h1>Borem ipsum dolor sit amet</h1>
-                        <h3> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua.</h3>
-                    </div>
-                </div>
-            </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -64,55 +55,10 @@
     </div>
 </section>
 
-<section class="padding-small details bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <i class="fas fa-check icon-details"></i>
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat
-                    volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
-                </p>
-            </div>
-            <div class="col text-center pr-4 pl-4 mr-4 ml-4">
-                <i class="far fa-clock icon-details"></i>
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat
-                    volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
-                </p>
-            </div>
-            <div class="col text-center">
-                <i class="fas fa-list icon-details"></i>
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat
-                    volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
 
 
-<section class="newsletter-section padding-small">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Lorem ipsum dolor sie amet</h1>
-            </div>
-            <div class="col-5">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control border-0 rounded-0" placeholder=""
-                           aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="input-group-text btn-color border-0 rounded-0" type="submit" id="basic-addon2">
-                            <a href="index.html">Lorem</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
+
 
 <section class="padding-medium story bg-light" id="about">
     <div class="container d-flex justify-content-center align-items-center">
